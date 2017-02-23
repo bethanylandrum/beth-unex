@@ -1,0 +1,199 @@
+.widget-area {
+    ul {
+        list-style: none;
+    }
+    li {
+        padding: rem-calc(10 0);
+    }
+}
+
+.widget-title {
+    &:after {
+        margin: rem-calc(15) auto rem-calc(15);
+    }
+}
+
+.entry-header:after, .widget-title:after {
+   content: '';
+   display: block;
+   width: rem-calc(60);
+   height: rem-calc(1);
+   margin: rem-calc(25) auto rem-calc(25);
+}
+
+.widget_tag_cloud {
+    a {
+        letter-spacing: rem-calc(1);
+        text-transform: uppercase;
+        padding: rem-calc(5 10);
+        margin: rem-calc(3 1);
+        display: inline-block;
+    }
+}
+
+.widget_tag_cloud a, .widget_powen_social_widget a {
+    box-shadow: 0px 0px 0px 1px #f2f2f2;
+}
+
+.widget_rss {
+    li {
+        margin-bottom: rem-calc(10);
+        a {
+            display: block;
+            font-weight: bold;
+        }
+    }
+}
+.rss-date {
+    display: block;
+}
+.rssSummary {
+    padding: rem-calc(10 0);
+}
+
+.powen-pagination {
+   .current {
+        color: #ffffff;
+    }
+}
+
+.widget_calendar {
+    thead, tbody {
+        text-align: center;
+    }
+    th, td {
+        padding: rem-calc(5);
+        border: 0;
+    }
+    thead th {
+        font-weight: normal;
+    }
+    tbody td a {
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
+    caption {
+        margin-bottom   : rem-calc(15);
+    }
+    #today {
+        border: 1px solid;
+    }
+    tfoot {
+        #prev {
+            text-align: left;
+        }
+        #next {
+            text-align: right;
+        }
+    }
+ }
+
+// FOOTER STYLE
+
+/* floats */
+.quarter,
+.one-third,
+.two-thirds,
+.half {
+    float: left;
+}
+
+/* widths */
+.one-third {
+    width: 32%;
+}
+.two-thirds {
+    width: 65.5%;
+}
+.quarter {
+    width: 23.5%;
+}
+.three-quarters {
+    width: 74.5%;
+}
+.half {
+    width: 48%;
+}
+
+/* margins  */
+.one-third {
+    margin: 0 0.5%;
+}
+.quarter,
+.two-thirds {
+    margin: 0 0.5%;
+}
+.left,
+.quarter.left,
+.one-third.left {
+    margin: 0 1% 0 0;
+    float: left;
+}
+.right,
+.quarter.right,
+.one-third.right {
+    margin: 0 0 0 1%;
+    float: right;
+}
+.half.left {
+    width: 48%;
+    margin: 0 2% 0 0;
+}
+.half.right {
+    width: 48%;
+    margin: 0 0 0 2%;
+}
+.two-thirds.left {
+    margin: 0 1% 0 0;
+}
+.two-thirds.right {
+    margin: 0 0 0 1%;
+    float: right;
+}
+
+.widget_powen_social_widget {
+    text-align: center;
+    .powen-social-icon {
+        font-size: 1rem;
+        position: relative;
+    }
+    a {
+        width: rem-calc(40);
+        height: rem-calc(40);
+        margin: rem-calc(2 0);
+        i {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            -webkit-transform : translateY(-50%);
+            -moz-transform    : translateY(-50%);
+            -ms-transform     : translateY(-50%);
+            -o-transform      : translateY(-50%);
+            transform         : translateY(-50%);
+        }
+    }
+}
+.powen-footer-widgets .powen-social-icon a, .powen-footer-widgets .tagcloud a{
+    box-shadow: 0px 0px 0px 1px #565656;
+}
+#monster-widget-placeholder-8 {
+    width: 100%;
+    padding: $default_gutter;
+}
+
+.powen-footer-widgets {
+    .widget-title {
+        text-align: left;
+        &:after {
+            content: '';
+            display: block;
+            width: rem-calc(45);
+            height: rem-calc(1);
+            margin: rem-calc(15 0);
+        }
+    }
+}

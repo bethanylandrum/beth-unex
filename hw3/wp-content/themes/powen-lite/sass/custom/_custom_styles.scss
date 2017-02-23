@@ -1,0 +1,584 @@
+* {
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+#wp-admin-bar-powen-admin-menu a.ab-item {
+	color: #00A0D2;
+}
+
+body {
+	@include body();
+}
+
+@include links();
+
+blockquote {
+	padding: $default_gutter;
+	@include blockquote();
+	p {
+		display: inline;
+	}
+}
+
+// Overridden from lists.scss
+ul, ol {
+	padding: 0;
+	margin: rem-calc(0 0 10 10);
+}
+
+.sticky {
+	position: relative;
+}
+
+.content-area {
+	float: left;
+	margin: 0 (-$size__site-sidebar) 0 0;
+	width: $size__site-main;
+}
+
+// content of layout/content-sidebar pasted here for easier modification
+
+.pagination {
+	padding: rem-calc(10);
+}
+
+.site-main {
+	margin: 0 $size__site-sidebar 0 0;
+}
+
+.powen-primary-nav .menu, .powen-main-nav .menu {
+	display: none;
+}
+
+.powen-primary-nav, .powen-social-icon{
+	display: inline-block;
+}
+.powen-main-nav {float: right;}
+.powen-primary-nav i:before, .powen-main-nav i:before, .powen-social-icon i:before {
+	padding: rem-calc(10);
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: $size__site-sidebar;
+}
+
+.powen-wrapper {
+	max-width: rem-calc(1125);
+	margin: 0 auto;
+}
+
+.powen-footer-widgets {
+	overflow: hidden;
+}
+
+.widget-container {
+	padding: $default_gutter;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.hvr-back-pulse:hover,
+.hvr-back-pulse:focus,
+.hvr-back-pulse:active {
+	background-color: none;
+}
+
+// **-----
+// CUSTOM STYLES
+// **-----
+
+// Header
+.site-header {
+	background-color: #fff;
+}
+
+.site-branding {
+	padding: rem-calc(15);
+	text-align: center;
+	img{
+		max-height: 450px;
+	}
+}
+
+.site-title, .site-description {
+	vertical-align: bottom;
+	margin-bottom: 0;
+}
+.site-title {
+	line-height: 2;
+	a {
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+}
+
+.entry-header:after,
+.widget-title:after
+{
+	background-color: #f2f2f2;
+}
+
+// Content
+.site-content {
+	max-width: rem-calc(1125);
+	margin: $default_gutter auto;
+}
+
+.powen-nav {
+	padding: rem-calc(18 0);
+}
+
+//**** Posts & pages
+
+// (hentry class covers both) plus their internal elements
+.article-hentry, .comments-area, .page-header, .site-main .posts-navigation, .error-404, .site-main .post-navigation, .paging-navigation {
+	padding-left: $post_l_padding;
+	padding-right: $post_r_padding;
+	padding-bottom: $post_b_padding;
+	padding-top: $post_t_padding;
+	margin: 0;
+
+	@include main_panel();
+}
+
+.article-hentry, .page-header {
+	@include sticky_post();
+}
+
+.site-info, .powen-footer-widgets {
+	padding: $default_gutter 0;
+}
+
+.powen-recent-post {
+	margin-top: $default_gutter;
+	.article-hentry {
+		padding-top: rem-calc(30);
+	}
+}
+
+.powen-pagination {
+	margin-bottom: $default_gutter;
+}
+
+.powen-featured-img {
+	overflow: hidden;
+	@include main_panel();
+	img {
+		margin: 0 auto;
+		display: block;
+		width: 100%;
+	}
+}
+
+.post-thumbnail {
+	margin-top: $default_gutter;
+	margin-right: -$post_r_padding;
+	margin-bottom: $default_gutter;
+	margin-left: -$post_l_padding;
+	img {
+		min-width: 100%;
+		vertical-align: bottom;
+	}
+	@include post_thumbnail();
+}
+
+// Centers category headers
+.page-header .page-title {
+	text-align: center;
+}
+
+//**** Individual post styling
+
+.entry-content {
+	a img {
+		// prevent gap below linked image
+		vertical-align: bottom;
+	}
+}
+
+// Center the post's title
+.entry-header {
+	text-align: center;
+	overflow: hidden;
+}
+
+.entry-meta {
+	display: inline-block;
+	font-weight: 300;
+	font-size: rem-calc(13);
+	a {
+		color: #aaaaaa;
+	}
+}
+
+.posted-on:before,
+.author:before,
+.edit-link:before,
+.comments-link:before,
+.tags-links:before,
+.cat-links:before,
+.byline:before
+{
+	color: #C0C0C0;
+}
+
+.continue_btn {
+	text-align: center;
+}
+
+.entry-content {
+	a.more-link {
+		font-size: 18*$px;
+		font-weight: 700;
+		display: inline-block;
+		padding: rem-calc(10);
+
+		@include more_link();
+	}
+}
+
+.entry-footer {
+	margin: $post_b_padding 0 0 0;
+	padding: $post_b_padding 0;
+	line-height: $font__line-height-body;
+	text-align: center;
+	font-size: rem-calc(14);
+	span {
+		margin-right: rem-calc(10);
+		color: #aaaaaa;
+	}
+	.cat-links, .tags-links {
+		-ms-word-break: break-all;
+		word-break: break-all;
+
+		// Non standard for webkit
+		word-break: break-word;
+
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+	}
+	.comments-link, .edit-link {
+		white-space: nowrap;
+	}
+	@include entry_footer();
+	a {
+		color: inherit;
+	}
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	> .comment {
+		@include comment();
+	}
+}
+
+.comment-author{
+	.fn{
+		text-transform: capitalize;
+	}
+}
+
+.comment-respond {
+	margin-top:rem-calc(20);
+	.form-allowed-tags {
+		display: none;
+	}
+}
+
+//**** Widgets
+
+.widget {
+	padding-left: $widget_l_padding;
+	padding-right: $widget_r_padding;
+	padding-top: $widget_t_padding;
+	padding-bottom: $widget_b_padding;
+	margin-left: $default_gutter;
+	margin-bottom: $default_gutter;
+
+	@include sub_panel();
+}
+
+.widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		&.page_item_has_children, &.menu-item-has-children {
+			padding-bottom: 0;
+			border: none;
+		}
+
+		// Prevent excessive, layout breaking nesting indentation levels
+		li li li {
+			padding-left: 0;
+		}
+	}
+	.children li:first-of-type, .sub-menu li:first-of-type {
+		margin-top: rem-calc(1);
+	}
+
+}
+
+.comments-area .comment-form p label {
+	display: inline-block;
+	min-width: rem-calc(100);
+}
+
+// Footer
+
+.site-footer {
+	width: 100%;
+	overflow: hidden;
+}
+
+.powen-footer-widgets .widget {
+	background: transparent;
+	float: left;
+	margin: 0 1% 0 0;
+	width: 24%;
+	padding: 1%;
+}
+
+//colors
+.powen-footer-widgets {
+	background: #222222;
+	color: #808080;
+	a {
+		color: #cccccc;
+	}
+	.powen-wrapper {
+		overflow: hidden;
+	}
+}
+.site-info {
+	text-align: center;
+	background: #000000;
+	color: #404040;
+	overflow: hidden;
+	a {
+		color: #666666;
+	}
+}
+.widget-title {
+	text-align: center;
+}
+
+.footer-scroll {
+	background: rgba(89, 89, 89, 0.2);
+	width: rem-calc(40);
+	height: rem-calc(35);
+	padding: rem-calc(4);
+	position: fixed;
+	bottom: rem-calc(100);
+	right: rem-calc(50);
+	text-align: center;
+	z-index: 100;
+	color: #ffffff;
+	cursor: pointer;
+	transition: 0.3s;
+	display: none;
+	border-radius: 3px;
+	&:hover {
+		background: #555555;
+		text-shadow: 0px 2px 1px #000000;
+	}
+}
+
+@include htags();
+
+
+//**** Responsive layout adjustments
+
+@media (max-width: rem-calc(1125)) {
+
+	// redeclare variables to be smaller
+	$default_h_padding: $phi * $phi * 1rem;
+	$default_v_padding: $default_h_padding;
+
+	// Posts and widgets horizontal padding
+	$post_l_padding: $default_h_padding;
+	$post_r_padding: $post_l_padding;
+
+	// Posts and widgets vertical padding
+	$post_t_padding: $default_h_padding / $phi;
+	$post_b_padding: $post_t_padding;
+
+	.article-hentry, .comments-area, .page-header, .site-main .posts-navigation, .site-main .post-navigation, .paging-navigation {
+		padding-left: $post_l_padding;
+		padding-right: $post_r_padding;
+		padding-top: $post_t_padding;
+		padding-bottom: $post_b_padding;
+	}
+
+	.post-thumbnail {
+		margin-top: $default_gutter;
+		margin-right: -$post_r_padding;
+		margin-bottom: $default_gutter;
+		margin-left: -$post_l_padding;
+	}
+
+	.footer-scroll {
+		bottom: rem-calc(30);
+		right: rem-calc(30);
+	}
+}
+
+@media (max-width: rem-calc(900)) {
+
+	// Single col layout
+	#primary, #secondary {
+		overflow: hidden;
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	#primary .site-main {
+		margin: 0;
+	}
+
+	.widget {
+		margin-left: 0;
+		margin-bottom: $default_gutter;
+		margin-top: $default_gutter;
+	}
+	.widget-title {
+		text-align: left;
+		&:after {
+			width: rem-calc(45);
+			margin: rem-calc(15 0);
+		}
+	}
+	.widget_powen_social_widget {
+		text-align: left;
+		i {
+			text-align: center;
+		}
+	}
+
+	.widget-area .widget {
+		margin-right: 0;
+	}
+
+	.powen-slide {
+		.powen-slider-content{
+			-webkit-transform: translateY(0%);
+			-moz-transform: translateY(0%);
+			-ms-transform: translateY(0%);
+			-o-transform: translateY(0%);
+			transform: translateY(0%);
+			opacity: 1;
+		}
+	}
+
+	.powen-slider-title, .powen-slider-description{
+		visibility: visible;
+		opacity: 1;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 100%;
+		margin: rem-calc(5 0);
+	}
+
+	.quarter,
+	.one-third,
+	.half,
+	.two-thirds,
+	.three-quarters,
+	.full-width {
+		width: 100%;
+		margin: 0;
+	}
+	/* padding adjustments */
+	.widget-area {
+		padding: rem-calc(0 0 10 0);
+	}
+
+	//Font Size
+	body {font-size: 0.928rem;}
+	.site-title {font-size: 2rem;}
+	.site-description {font-size: 0.928rem;}
+	.powen-nav {font-size: 0.928rem;}
+	.powen-slider-title {font-size: 1.071rem;}
+	.powen-slider-description {font-size: 1rem;}
+	.widget-title {font-size: 1.214rem;}
+	.widget-area {font-size: 0.928rem;}
+	.powen-footer-nav {font-size: 0.928rem;}
+	h1 {font-size: 1.428rem;}
+	h2 {font-size: 1.357rem;}
+	h3 {font-size: 1.285rem;}
+	h4 {font-size: 1.214rem;}
+	h5 {font-size: 1.142rem;}
+	h6 {font-size: 1.071rem;}
+
+}
+
+@media (max-width: rem-calc(600)) {
+
+	.flex-direction-nav .flex-next, .flex-direction-nav .flex-prev {
+		display: none;
+	}
+}
+
+@media (max-width: rem-calc(400)) {
+
+	// redeclare variables to be smaller
+	$default_h_padding: $phi * 1rem;
+	$default_v_padding: $default_h_padding;
+
+	// Posts and widgets horizontal padding
+	$post_l_padding: $default_h_padding;
+	$post_r_padding: $post_l_padding;
+	$widget_l_padding: $default_h_padding;
+	$widget_r_padding: $widget_l_padding;
+
+	// Posts and widgets vertical padding
+	$post_t_padding: $default_h_padding / $phi;
+	$post_b_padding: $post_t_padding;
+	$widget_t_padding: $default_h_padding;
+	$widget_b_padding: $widget_t_padding;
+
+	.article-hentry, .comments-area, .page-header, .site-main .posts-navigation, .site-main .post-navigation, .paging-navigation {
+		padding-left: $post_l_padding;
+		padding-right: $post_r_padding;
+		padding-top: $post_t_padding;
+		padding-bottom: $post_b_padding;
+	}
+
+	.powen-recent-article {
+		padding-top: $post_t_padding;
+	}
+
+	.post-thumbnail {
+		margin-top: $default_gutter;
+		margin-right: -$post_r_padding;
+		margin-bottom: $default_gutter;
+		margin-left: -$post_l_padding;
+	}
+	.powen-slider-title {font-size: 1rem;}
+	.powen-slider-description {font-size: 0.928rem;}
+}
+
+//404 Page
+.error-404 {
+	min-height: rem-calc(350);
+	border-top: 1px solid #f2f2f2;
+	text-align: center;
+	.fa-exclamation-circle {
+		font-size: rem-calc(100);
+		color: #eeeeee;
+		margin-bottom: rem-calc(20);
+	}
+}

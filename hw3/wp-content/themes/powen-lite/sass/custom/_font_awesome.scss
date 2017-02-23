@@ -1,0 +1,163 @@
+/*------------------
+FontAwesome
+---------------------*/
+	//CONTENT ICONS
+	.posted-on:before,
+	.comments-link:before,
+	.edit-link:before,
+	.nav-previous:before,
+	.nav-next:after,
+	.byline:before,
+	.content-area .hentry .entry-date:after,
+	.cat-links:before,
+	.comment-metadata time:before,
+	.powen-continue-reading:after,
+	.breadcrumbs .separator:after,
+	.tags-links:before,
+	blockquote:before,
+	.comment-body .reply:before,
+	#cancel-comment-reply-link:before,
+	.logged-in-as a:first-child:before,
+	.logged-in-as a:nth-child(2):before,
+	.comment-awaiting-moderation:before,
+	//SIDEBAR ICONS
+	.widget_recent_comments li:before,
+	.widget_recent_comments li>a:before,
+	.widget_archive li:before,
+	.widget_recent_entries li:before,
+	.widget_categories li:before,
+	.widget_meta li:before,
+	.widget_pages li:before,
+	.powen-wrapper .recent-comment-people:before,
+	.menu-long-menu-container li:before,
+	.widget_recent_entries li:before,
+	.footer-scroll:before,
+	.powen-pro-mobile-menu .mm:before
+{
+font-family: 'FontAwesome';
+font-weight: normal;
+font-style: normal;
+}
+.fa {
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: inherit;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+transform: translate(0, 0);
+}
+
+/**---------------
+Write your code here
+--------------------**/
+
+//PRIMARY ICONS
+
+//Date
+.posted-on:before, .comment-metadata time:before {
+	content: "\f017";
+	padding: rem-calc(5);
+}
+//Comment
+.comments-link:before {
+	content: "\f0e6";
+	padding: rem-calc(5);
+}
+//Edit
+.edit-link:before {
+	content: "\f044";
+	padding: rem-calc(5);
+}
+//Older posts
+.nav-previous:before {
+	content: "\f100";
+	margin: rem-calc(0 5);
+}
+//Newer posts
+.nav-next:after {
+	content: "\f101";
+	margin: rem-calc(0 3);
+}
+.byline:before {
+	content: "\f007";
+	padding: rem-calc(5);
+}
+.cat-links:before {
+	content: "\f07b";
+	padding: rem-calc(5);
+}
+.tags-links:before {
+	content: "\f02c";
+	padding: rem-calc(5);
+}
+.comment-metadata time:before {
+	padding-left: 0;
+}
+.powen-continue-reading:after {
+	content: "\f178";
+	vertical-align: middle;
+}
+.breadcrumbs .separator:after {
+	content: "\f105";
+    color: #cccccc;
+    padding-right: rem-calc(5);
+}
+#cancel-comment-reply-link:before {
+	content: "\f05e";
+}
+.logged-in-as a:first-child:before {
+	content: "\f007";
+}
+.logged-in-as a:nth-child(2):before {
+	content: "\f08b";
+}
+.comment-awaiting-moderation:before {
+	content: "\f071";
+	margin-right: rem-calc(5);
+}
+
+//SECONDARY ICONS
+
+//Recent Comments
+.widget_recent_comments li:before {
+	content: "\f007";
+	padding-right: rem-calc(10);
+	color: #cccccc;
+}
+.widget_recent_comments li>a:before {
+	content: "\f075";
+	display: none;
+}
+//Archive
+.widget_archive li:before, .widget_recent_entries li:before, .widget_categories li:before, .widget_meta li:before, .widget_pages li:before, .menu-long-menu-container li:before, .widget_recent_entries li:before {
+	content: "\f105";
+	color: #cccccc;
+	padding-right: rem-calc(10);
+}
+.powen-wrapper .recent-comment-people:before {
+	content: "\f007";
+	color: #454545;
+	background: #2F2F2F;
+	padding-right: rem-calc(10);
+	padding-left: rem-calc(10);
+	padding-top: rem-calc(10);
+	border-radius: 50%;
+}
+
+blockquote:before {
+	content: "\f10d";
+	margin-right: rem-calc(10);
+}
+
+.comment-body .reply:before {
+	content: "\f112";
+	margin-right: rem-calc(5);
+}
+
+//Back To Top
+.footer-scroll:before {
+	content: "\f106";
+	font-size: rem-calc(25);
+	line-height: 1;
+}

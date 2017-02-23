@@ -1,0 +1,131 @@
+.powen-most-recent-post {
+	position: relative;
+}
+
+.powen-recent-article {
+	padding-top: $post_t_padding;
+}
+
+.powen-latest-post-tag {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	span {
+		padding: rem-calc(0 10);
+		display: inline-block;
+		font-size: rem-calc(15);
+		text-transform: uppercase;
+	}
+}
+
+.entry-footer {
+	letter-spacing: rem-calc(1);
+	.post-share {
+		font-size: rem-calc(14);
+	}
+}
+
+.entry-date {
+	padding-right: rem-calc(5);
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.posted-on, .byline {
+	padding: rem-calc(5);
+}
+
+.powen-footer-widgets input + div {
+	text-align: center;
+}
+
+//powen-pagination
+.powen-pagination {
+	text-align: center;
+	.current {
+		padding: rem-calc(15 25);
+		display: inline-block;
+	}
+	a {
+		padding: rem-calc(15 25);
+		background: #ffffff;
+		display: inline-block;
+	}
+	.dots {
+		padding: rem-calc(15 25);
+		border-radius: 3px;
+		display: inline-block;
+	}
+
+}
+
+.page-links > .page-links-title {
+	border: 0;
+	height: auto;
+	margin: 0;
+	padding-right: rem-calc(8);
+	width: auto;
+}
+
+.page-links a, .page-links > span
+{
+	border: 1px solid;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: rem-calc(13);
+	height: rem-calc(24);
+	line-height: rem-calc(22);
+	margin-right: rem-calc(4);
+	text-align: center;
+	width: rem-calc(24);
+}
+
+.powen-pagination .current, .powen-pagination a {
+	border: rem-calc(1) solid $color_border;
+	border-radius: 3px;
+	margin: rem-calc(5);
+}
+
+.powen-pagination .next, .powen-pagination .prev, .powen-pagination .last {
+	padding: rem-calc(15 30);
+	background: #ffffff;
+	border-radius: rem-calc(3);
+	border: rem-calc(1) solid $color_border;
+	margin: rem-calc(5);
+}
+
+//breadcrumbs
+.breadcrumbs{
+    list-style:none;
+    overflow:hidden;
+    background: #fff;
+    margin: 0;
+    padding: $default_gutter;
+    text-align: right;
+}
+
+.breadcrumbs li{
+    display:inline-block;
+    margin-right: rem-calc(5);
+    padding: rem-calc(5);
+}
+
+.powen-continue-reading {
+	margin: $post_b_padding 0 $post_b_padding / $phi 0;
+	text-align: center;
+	a {
+		padding: rem-calc(10);
+	}
+}
+
+.post-navigation {
+	.nav-previous {
+		text-align: left;
+	}
+	.nav-next {
+		text-align: right;
+	}
+ }

@@ -1,0 +1,42 @@
+a {
+	transition: 0.5s;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+}
+
+.powen-primary-nav a,
+.powen-main-nav a,
+.entry-title a,
+.powen-continue-reading a,
+.nav-links a,
+.reply a,
+.widget-area a,
+.powen-social-icon a,
+.powen-pagination a
+{
+	color: inherit;
+}
+
+.widget-area a {
+	border-bottom: 1px solid #f8f8f8;
+	&:hover {
+		border-bottom: 1px solid #fafafa;
+	}
+}
+.powen-footer-widgets a {
+	border: none;
+	&:hover {
+		border: none;
+	}
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+{
+	color:#ffffff;
+}
