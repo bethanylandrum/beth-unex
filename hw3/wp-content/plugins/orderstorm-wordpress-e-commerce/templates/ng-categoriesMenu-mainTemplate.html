@@ -1,0 +1,21 @@
+<div class="ng-categoriesMenu-mainTemplate" ng-controller="menuCtrl">
+  <div layout="row" ng-show="$root.pluginMenuLoaded">
+    <md-sidenav class="md-sidenav-left md-whiteframe-1dp storm-main-container-style" md-component-id="left"
+        md-is-locked-open="true"
+    > 
+      <md-content role="navigation" class="storm-bkg-color storm-menu-font-color">
+        <ul class="storm-side-menu">
+          <li ng-repeat="section in vm.menu.sections"
+              ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+            <h2 ng-if="section.type === 'heading'"
+                id="heading_{{ section.name | nospace }}">
+              {{section}}
+            </h2>
+            <os-app-menu-link section="section" ng-if="section.type === 'link'"></os-app-menu-link>
+            <os-app-menu-toggle section="section" ng-if="section.type === 'toggle'"></os-app-menu-toggle>
+          </li>
+        </ul>
+      </md-content>
+    </md-sidenav>
+  </div>
+</div>

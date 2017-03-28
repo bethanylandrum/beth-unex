@@ -1,0 +1,23 @@
+Title:		SalesCart Cloud: Free Shopping Cart for WordPress
+Created:	mtb
+Date:		2015.04.01
+Purpose:	SalesCart Cloud based Ecommerce
+Copyright:	Copyright (C) - 1995-2015 by ComCity LLC.  All Rights Reserved.
+License:	Freeware, GNU General Public License v2; GPLV2; 
+License URI:	http://www.gnu.org/licenses/gpl-2.0.html
+Re:		https://wordpress.org/plugins/about/svn/#task-3
+
+HISTORY:
+
+*********************** V E R   1.0.0 ***********************
+-	mtb	04/01/15	Completed and submitted to Wordpress for First Review.
+-	mtb	04/14/15	Reviewed by WordPress
+-	mtb	04/22/15	Released 
+
+*********************** V E R   1.1.0 ***********************
+-	mtb	10/07/15	Updated readme.txt for release and test date
+-	mtb 	10/07/15	Updated /css/scFrameStyle.css to add ajax-loader.gif
+-	mtb	10/17/15	Updated /libs/scart_display.php to accomodate css .LoadingImage class
+-	mtb	10/17/15	Removed <img src="<?php echo SC_PLUGURL; ?>images/ajax-loader.gif" class="loader-img" /> from /views/landing.php
+-	mtb	10/17/15	Updated version in salescart-ecommerce.php
+-	mtb	10/17/15	Released

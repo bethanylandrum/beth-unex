@@ -1,0 +1,18 @@
+<div class="storm-color-config-page row">
+    <div class="col-lg-12">
+        <md-grid-list
+            md-cols-xs="1" md-cols-sm="1" md-cols-md="1" md-cols-gt-md="4"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="6px" md-gutter-gt-sm="6px" 
+        >
+            <md-grid-tile class="gray" ng-repeat="color in colorConfig" ng-style="color.styleImg" ng-click="">
+                <md-grid-tile-header>
+                    {{color.Name}}
+                </md-grid-tile-header>
+            </md-grid-tile>
+        </md-grid-list>
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!formLoaded">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </div>
+</div>

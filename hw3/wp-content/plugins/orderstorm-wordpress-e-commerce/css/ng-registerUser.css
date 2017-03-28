@@ -1,0 +1,84 @@
+.storm-apps-payment-checkout .main-credit-style table,
+.storm-apps-payment-checkout .main-credit-style th,
+.storm-apps-payment-checkout .main-credit-style td {
+    border: none !important;
+}
+
+.credit-grad {
+  background: -webkit-linear-gradient(120deg, #84B4DC, #3C8DBC); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(120deg, #84B4DC, #3C8DBC); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(120deg, #84B4DC, #3C8DBC); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(120deg, #84B4DC, #3C8DBC); /* Standard syntax */
+}
+
+.register-new-user .dropdown-menu {
+	top: 0px ! important;
+}
+
+
+@media only screen and (max-width: 1199px) {
+	.register-new-user .domain-dot {
+		margin-top:8px; margin-right:-15px
+	}	
+}
+
+@media only screen and (min-width: 1200px) {
+	.register-new-user .domain-dot {
+		margin-top:8px; margin-right:-75px; margin-left:-16px;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.credit-gui-xs-offset {
+		margin-left: 14px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.credit-gui-xs-offset {
+		margin-left: 0px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.main-credit-style {
+		border-radius: 10px; 
+		width:232px; 
+		margin-top:7px;
+	}
+	.credit-card-number {
+		width:176px;
+	}
+	.card-corner-image {
+		margin-left:45px;
+		width:60px;
+	}
+	.ccv-label {
+		margin-left:70px;
+	}
+	.ccv-box {
+		width:50px;
+		margin-left:39px;
+	}
+}
+
+@media only screen and (min-width: 371px) {
+	.main-credit-style {
+		border-radius: 10px; 
+		width:270px; 
+		margin-top:7px;
+	}
+	.credit-card-number {
+		width:220px;
+	}
+	.card-corner-image {
+		margin-left:65px;
+	}
+	.ccv-label {
+		margin-left:95px;
+	}
+	.ccv-box {
+		width:50px;
+		margin-left:65px;
+	}
+}

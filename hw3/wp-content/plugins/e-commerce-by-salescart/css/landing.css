@@ -1,0 +1,304 @@
+@charset "utf-8";
+    @font-face {
+    font-family: helveticabold;
+    src: url(fonts/helvetica_bold_0-webfont.eot);
+    src: url(fonts/helvetica_bold_0-webfont.eot?#iefix) format('embedded-opentype'), url(fonts/helvetica_bold_0-webfont.woff) format('woff'), url(fonts/helvetica_bold_0-webfont.ttf) format('truetype'), url(fonts/helvetica_bold_0-webfont.svg#helveticabold) format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: helveticaregular;
+    src: url(fonts/helvetica_0-webfont.eot);
+    src: url(fonts/helvetica_0-webfont.eot?#iefix) format('embedded-opentype'), url(fonts/helvetica_0-webfont.woff) format('woff'), url(fonts/helvetica_0-webfont.ttf) format('truetype'), url(fonts/helvetica_0-webfont.svg#helveticaregular) format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+.space {
+    clear: both;
+    padding: 30px 0 0;
+    width: 100%;
+    float: left;
+}
+.scart_mainContainer {
+    font-family: helveticaregular;
+}
+.scart_mainContainer h1, .scart_mainContainer h2, .scart_mainContainer h3, .scart_mainContainer h4, .scart_mainContainer h5, .scart_mainContainer h6, .scart_mainContainer li, .scart_mainContainer p, .scart_mainContainer ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+.scart_mainContainer img {
+    border: 0;
+}
+.scart_save_button {
+    width: 300px;
+    padding-top: 0px;
+    clear: both;
+    margin: auto;
+
+    background: #0055aa;
+    text-align: center;
+    font-size: 23px;
+    color: #FFF!important;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    border: 0px;
+}
+.sell-table {
+    padding: 10px;
+    color: #414951;
+    font-size: 14px;
+    line-height: 26px;
+    width: 85%;    
+    align: center;
+    margin: auto;
+}
+.sell-table td {
+    vertical-align:top;
+}
+
+.sell-table th {
+    font-size: 16px;
+    font-style:bold;
+    width: 30%;
+    text-align: left;
+    height: 23px;
+color: blue;
+}
+.build-table {
+    padding: 10px;
+    color: #414951;
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.build-table th {
+    width: 30%;
+    text-align:center;
+    height: 23px;
+}
+.build-table td {
+    text-align: center;
+    font-size: 15px;
+    background: #e8e7e7;
+    font-style:bold;
+    vertical-align:top;
+    width: 30%;
+}
+.build-table p {
+    font-size: 15px;
+    font-style: bold;
+}
+
+ul.sc_bullet_square {
+    list-style-type: square;
+}
+
+.special_text{
+    text-decoration: none !important; 
+    font-family: helveticaregular !important;
+    color: red;
+}
+
+.sc_logo{
+    text-align: center;
+    margin: auto;
+}
+
+.salescart-button {
+    margin: auto;
+    display: block;
+    background: url(../images/start_now.png) no-repeat;	
+    height: 39px; 
+    width: 119px;    
+}
+
+.plug_footer{
+    margin-top: 30px;
+}
+
+.main_contant p, {
+    font-family: helveticaregular;
+}
+.scart_mainContainer input, .scart_mainContainer select {
+    outline: 0;
+}
+.wrapper {
+    padding: 48px 106px 40px 20px;
+    display: block;
+    background: #f1f1f1;
+}
+.main_contant {
+    margin: 0;
+    padding: 0;
+}
+.main_contant h1 {
+    padding: 0;
+    color: #1a1d20;
+    font-family: helveticabold;
+    font-size: 28px;
+}
+.main_contant p {
+    padding: 0;
+    color: #414951;
+    font-size: 17px;
+    line-height: 26px;
+}
+
+/*
+.main_contant p span {
+    text-decoration: underline;
+    font-family: helveticabold;
+}
+*/
+
+.upldbtn {
+    float: left;
+    text-align: center;
+    width: 100%}
+.upload_butt {
+    background-color: #12a252;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 5px 45px;
+    width: auto;
+    cursor: pointer;
+}
+
+.red_txt, .tab2 .red_txt {
+    color: #ef4745!important;
+    text-align: center!important;
+    padding-top: 5px!important;
+}
+.blue_txt {
+    color: #0055aa!important;
+    text-align: center!important;
+    padding-top: 5px!important;
+}
+.red_txt {
+    color: #f80000!important;
+    text-align: center!important;
+    padding-top: 5px!important;
+}
+
+.bdr_top {
+    border-top: none!important;
+}
+
+.suc_msg {
+    background: #12A252;
+    color: #FFF;
+    display: none;
+    font-size: 23px;
+    padding: 10px;
+    text-align: left;
+    text-decoration: none;
+}
+.error_msg {
+    background: #D22B30;
+    color: #FFF;
+    display: none;
+    font-size: 23px;
+    padding: 10px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.inputError {
+    border: 1px solid #f80000!important;
+}
+
+.main_contant h1 {
+    margin: 0 0 19px;
+}
+.main_contant p {
+    margin: 0 0 26px;
+}
+.main_contant p>a {
+    color: #1a1d20;
+    text-decoration: underline;
+}
+
+.main_contant p>a, .tab1 p span {
+    font-family: helveticabold;
+}
+.wrapper .ui-accordion-header-active {
+    margin-top: 20px!important;
+}
+
+.tab8 .save_button {
+    padding-top: 40px;
+}
+.tab8 .save_button a {
+    padding: 16px 0;
+}
+
+#scpageLoad {
+    background: url(../images/ajax-loader.gif) 50% 50% no-repeat #F9F9F9;
+    height: 100%;
+    left: 160px;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    width: 89%;
+    z-index: 9999;
+}
+
+.scart_mainContainer input[type=email], .scart_mainContainer input[type=number], .scart_mainContainer input[type=password], .scart_mainContainer input[type=search], .scart_mainContainer input[type=tel], .scart_mainContainer input[type=text], .scart_mainContainer input[type=url], .scart_mainContainer select, .scart_mainContainer textarea {
+    color: #5a6570!important;
+}
+
+@media (max-width:767px) {
+    .icon2 .fb_iframe_widget span {
+    width: auto;
+}
+
+.wrapper {
+    margin: 7px 0 0 4px!important;
+}
+
+@-moz-document url-prefix() {
+    .sfcm.scart_wicon {
+    margin: -1px;
+    padding: 0;
+}
+@media (min-width:320px) and (max-width:480px) {
+    .scart_tool_tip_2, .tool_tip {
+    padding: 5px 14px 0;
+}
+
+@media (max-width:320px) {
+    .scart_tool_tip_2, .tool_tip {
+    padding: 5px 14px 0;
+}
+
+ul.scart_instructions {
+    float: left;
+    width: 39%}
+ul.scart_instructions li {
+    font-size: 12px!important;
+    line-height: 25px!important;
+    margin: 0!important;
+    padding: 0 0 0 15px!important;
+    width: 100%}
+
+.done_btn
+{
+	width: auto;
+	padding: 3px 80px;
+	color: #fff;
+	background-color:#12a252;
+	text-decoration: none;
+	font-size: 18px;
+}

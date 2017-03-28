@@ -1,0 +1,36 @@
+.storm-applications-remove {
+	clear: both;
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.3333333333;
+    text-transform: uppercase;
+}
+.storm-applications-remove-link {
+    color: #767676 !important;
+    text-decoration: none !important;
+	vertical-align: baseline;
+}
+
+.storm-applications-remove-link:before
+{
+	font-family: FontAwesome;
+	font-size: 13px;
+    content: "\f00d";
+}
+
+.storm-apps-applications .row {
+    margin-left: 0px !important; 
+}
+
+.storm-apps-applications .storm-auto-selector {
+	cursor: pointer;
+}
+
+.storm-apps-applications .storm-auto-selector {
+    text-align: left;
+}
+
+.storm-apps-applications .storm-auto-selector-dropdown {
+    padding: 0px;
+}

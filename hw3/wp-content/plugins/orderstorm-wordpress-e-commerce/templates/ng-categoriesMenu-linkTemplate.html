@@ -1,0 +1,12 @@
+<md-button 
+    href="{{templateURL(section)}}"
+    ng-click="focusSection()"
+    class="storm-menu-font-color storm-bkg-color"
+>
+<!-- ui-sref-active="active"
+    ui-sref="{{section.state}}" -->
+    <div class="storm-center-element">{{section | humanizeDoc}}</div>
+    <span class="md-visually-hidden" ng-if="isSelected()">
+        current page
+    </span>
+</md-button>

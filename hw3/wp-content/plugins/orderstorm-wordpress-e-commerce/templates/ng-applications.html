@@ -1,0 +1,79 @@
+<div class="storm-apps-applications">
+	<!--<div class="fa fa-spinner fa-spin" ng-show="!formLoaded"></div>-->
+	<div ng-show="formLoaded">
+		<!--<div class="fa fa-spinner fa-spin" ng-show="typesLoading"></div>-->
+		<div class="storm-auto-selector" ng-show="listOfMakesLoaded && !typesLoading" ng-click="blankAllCriterion(); getTypes(); setFocusTypes();">
+			<a>{{appSelectionCriteria.typeName}}</a>
+		</div>
+		<div ng-show="!listOfMakesLoaded && !typesLoading">
+			<select
+				class="form-control storm-auto-selector-dropdown"
+				name="appSelectionCriteriaType"
+				id="appSelectionCriteriaType"
+				ng-model="appSelectionCriteria.type"
+				ng-blur="resetToCookies();"
+				ng-options="type.app_product_class_key as type.name for type in appProductClass"
+				ng-disabled="!listOfTypesLoaded"
+				ng-change="getMakesForAType(appSelectionCriteria.type)"
+			>
+			<option value="">&mdash;&nbsp;select vehicle type&nbsp;&mdash;</option>
+			</select>
+		</div>
+		<!--<div class="fa fa-spinner fa-spin" ng-show="makesLoading"></div>-->
+		<div class="storm-auto-selector" ng-show="listOfMakesLoaded && listOfModelsLoaded && !makesLoading" ng-click="blankModelCriterion(); clearMake(); getMakesForAType(appSelectionCriteria.type); setFocusMakes();">
+			<a>{{testMakeName}}</a>
+		</div>
+		<div ng-show="listOfMakesLoaded && !listOfModelsLoaded && !makesLoading">
+			<select
+				class="form-control storm-auto-selector-dropdown"
+				name="appSelectionCriteriaMake"
+				id="appSelectionCriteriaMake"
+				ng-model="appSelectionCriteria.make"
+				ng-options="make.make_key as make.make for make in makes"
+				ng-disabled="!listOfMakesLoaded"
+				ng-change="getModels(appSelectionCriteria.type, appSelectionCriteria.make)"
+			>
+				<option value="">&mdash;&nbsp;select make&nbsp;&mdash;</option>
+			</select>
+		</div>
+		<!--<div class="fa fa-spinner fa-spin" ng-show="modelsLoading"></div>-->
+		<div class="storm-auto-selector" ng-show="listOfModelsLoaded && listOfYearsLoaded && !modelsLoading" ng-click="blankYears(); clearModel(); getModels(appSelectionCriteria.type, appSelectionCriteria.make); setFocusModels();">
+			<a>{{testModelName}}</a>
+		</div>
+		<div ng-show="listOfModelsLoaded && !listOfYearsLoaded && !modelsLoading">
+			<select
+				class="form-control storm-auto-selector-dropdown"
+				name="appSelectionCriteriaModel"
+				id="appSelectionCriteriaModel"
+				ng-model="appSelectionCriteria.model"
+				ng-options="model.model_key as model.model for model in models"
+				ng-disabled="!listOfModelsLoaded"
+				ng-change="getYears(appSelectionCriteria.model)"
+			>
+				<option value="">&mdash;&nbsp;select model&nbsp;&mdash;</option>
+			</select>
+		</div>
+		<!--<div class="fa fa-spinner fa-spin" ng-show="yearsLoading"></div>-->
+		<div class="storm-auto-selector" ng-show="listOfYearsLoaded && yearChosen && !yearsLoading" ng-click="blankYearsChosen(); clearYear(); getYears(appSelectionCriteria.model); setFocusYears();">
+			<a>{{appSelectionCriteria.year}}</a>
+		</div>
+		<div ng-show="listOfYearsLoaded && !yearChosen && !yearsLoading">
+			<select
+				class="form-control storm-auto-selector-dropdown"
+				name="appSelectionCriteriaYear"
+				id="appSelectionCriteriaYear"
+				ng-model="appSelectionCriteria.appProductKey"
+				ng-options="year.app_product_key as year.product_year for year in years"
+				ng-disabled="!listOfYearsLoaded"
+				ng-change="getProductsByApp()"
+			>
+				<option value="">&mdash;&nbsp;select year&nbsp;&mdash;</option>
+			</select>
+		</div>
+		<div class="storm-auto-selector" ng-show="yearChosen && yearChosen" ng-click="removeVehicle(); clearType();">
+			<span class="storm-applications-remove">
+			<a class="storm-applications-remove-link"> Remove Vehicle</a>
+			</span>
+		</div>
+	</div>
+</div>

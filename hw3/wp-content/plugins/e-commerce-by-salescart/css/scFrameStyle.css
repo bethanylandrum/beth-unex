@@ -1,0 +1,35 @@
+/*	SalesCart iFrame Style 
+*	Desc: Misc. functions common to SalesCart
+*	Version: 1.1
+*	Author: SalesCart
+*	Author URI: http://www.SalesCart.com
+*	Copyright (C) 2015 by ComCity LLC and SalesCart.
+*	Distribution License: GNU General Public License v2
+*	All Other Rights Reserved
+*/
+
+/*************************************************************************/
+/** iframe Store Styles							**/
+/*************************************************************************/
+
+.StoreIFrame {
+/** IE 8 **/
+	background-color: transparent;
+	border: 0px none transparent;
+	padding: 0px;
+	scrolling: no !important;  
+	width: 100% !important;
+   
+	overflow: hidden;
+	
+/** New Way: Not 100% browser supported Yet **/
+	seamless: seamless;
+}
+
+#WPPageFix {
+	margin-right: 0%;
+}
+
+.LoadingImage {
+  background:url("images/ajax-loader.gif") center center no-repeat;
+ }

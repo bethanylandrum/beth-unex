@@ -1,0 +1,126 @@
+<div class="storm-apps-payment-checkout">
+	<div>we accept</div>
+	<div class="col-lg-12" style="margin-left:-15px !important;">
+		<img ng-src="//{{card.image}}" ng-repeat="card in acceptedCards" class="credit-gui-xs-offset" style="{{card.cssStyle}}">
+	</div>
+	<div class="box credit-grad col-lg-12 main-credit-style credit-gui-xs-offset">
+		<div class="box-body credit-grad">
+			<table style="margin-left:-15px;">
+				<tbody style="border:2px;">
+					<tr>
+						<td style="width=160px;">&nbsp;</td>
+						<td></td>
+						<td rowspan="2" style="width:100px;"><img ng-src="{{currentImage}}" ng-if="currentImage" class="card-corner-image"></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<label for="creditCardNumber" style="text-shadow: 1px 1px 2px white;">
+							 	card number
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<input
+								class="credit-card-number"
+								ng-model="creditCardScope.data.creditCardNumber"
+								type="tel"
+								ng-maxlength="22"
+								ng-blur="validCheck(creditCardScope.data.creditCardNumber)"
+								ng-focus="clearValidCheck()"
+								ng-change="spaceCardNumber();validCheckSubmit(creditCardScope.data.creditCardNumber);checkCCVMismatchSubmit();checkNotAccepted();"
+								name="creditCardNumber"
+								id="creditCardNumber"
+								placeholder="credit card number"
+								popover-placement="top"
+								popover-html-unsafe="{{ creditCardNumberHelpText() }}"
+								popover-append-to-body="true"
+								popover-trigger="mouseenter"
+							>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<div ng-show="!creditCardScope.invalidCard && !creditCardScope.notAcceptedCard">&nbsp;</div>
+							<div class="form-group text-danger" ng-show="creditCardScope.invalidCard">Invalid Credit Card Number</div>
+							<div class="form-group text-danger" ng-show="creditCardScope.notAcceptedCard">We do not accept {{cardType}}</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="expireDate" style="text-shadow: 1px 1px 2px white;">
+								expiration
+							</label>
+						</td>
+						<td></td>
+						<td>
+							<label class="ccv-box" for="ccvCode" style="text-shadow: 1px 1px 2px white;">
+							 	CCV
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								size="12"
+								type="hidden"
+								datepicker-options="{minMode: 'month'}"
+								datepicker-mode="'month'"
+								datepicker-popup="MM/yyyy"
+								ng-model="creditCardScope.data.expireDate"
+								ng-change="checkDate()"
+								ng-readonly="true"
+								name="expireDate"
+								id="expireDate"
+								placeholder="mm/yyyy"
+								is-open="isDatePickerOpen"
+								close-text="Close"
+								popover-placement="top"
+								popover-append-to-body="true"
+								popover-html-unsafe="{{ expireDateHelpMessage() }}"
+								popover-trigger="mouseenter"
+							/>
+							<label style="text-shadow: 1px 1px 2px white;">{{creditCardScope.data.displayExpDate}}</label>
+						</td>
+						<td>
+							<button
+								style="margin-left:15px;"
+								type="button"
+								class="action-date btn btn-default"
+								ng-click="toggleDatePickerForCreditCardAdd($event)"
+							>
+								<i class="glyphicon glyphicon-calendar"></i>
+							</button>
+						</td>
+						<td>
+							<input
+								class="ccv-box"
+								money
+								precision="0"
+								ng-model="creditCardScope.data.ccvCode"
+								type="tel"
+								ng-max="4"
+								ng-change="checkCCVLength();checkCCVShortSubmit();checkCCVMismatchSubmit();"
+								ng-focus="clearCCVMismatch()"
+								ng-blur="checkCCVShort();checkCCVMismatch();"
+								name="ccvCode"
+								id="ccvCode"
+								popover-placement="top"
+								popover-html-unsafe="{{ ccvCodeHelpText() }}"
+								popover-append-to-body="true"
+								popover-trigger="mouseenter"
+							>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<div class="form-group text-danger" ng-show="creditCardScope.ccvShort">CCV code is too short</div>
+							<div class="form-group text-danger" ng-show="creditCardScope.ccvMismatch">CCV code does not match card type</div>
+							<div class="form-group text-danger" ng-show="creditCardScope.badDate">Please enter a date that is in the future.</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

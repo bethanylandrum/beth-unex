@@ -1,0 +1,281 @@
+.storm-apps-payment-checkout .main-credit-style table,
+.storm-apps-payment-checkout .main-credit-style th,
+.storm-apps-payment-checkout .main-credit-style td {
+    border: none !important;
+    margin-bottom: 5px !important;
+}
+
+.storm-apps-payment-checkout .main-credit-style .dropdown-menu {
+	top: 0px ! important;
+}
+
+@media only screen and (max-width: 1199px) {
+	.storm-apps-payment-checkout .credit-gui-xs-offset {
+		margin-left: 14px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.storm-apps-payment-checkout .credit-gui-xs-offset {
+		margin-left: 0px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.storm-apps-payment-checkout .main-credit-style {
+		border-radius: 10px !important; 
+		width:232px !important; 
+		margin-top:7px !important;
+	}
+	.storm-apps-payment-checkout .credit-card-number {
+		width:176px !important;
+	}
+	.storm-apps-payment-checkout .card-corner-image {
+		margin-left:45px !important;
+		width:60px !important;
+	}
+	.storm-apps-payment-checkout .ccv-label {
+		margin-left:70px !important;
+	}
+	.storm-apps-payment-checkout .ccv-box {
+		width:60px !important;
+		margin-left:39px !important;
+		height: 28px !important;
+		font-size:14px;
+		margin-bottom: 5px !important
+	}
+}
+
+@media only screen and (min-width: 371px) {
+	.storm-apps-payment-checkout .main-credit-style {
+		border-radius: 10px !important; 
+		width:270px !important; 
+		margin-top:7px !important;
+	}
+	.storm-apps-payment-checkout .credit-card-number {
+		width:220px !important;
+	}
+	.storm-apps-payment-checkout .card-corner-image {
+		margin-left:58px !important;
+	}
+	.storm-apps-payment-checkout .ccv-label {
+		margin-left:95px !important;
+	}
+	.storm-apps-payment-checkout .ccv-box {
+		width:60px !important;
+		margin-left:65px !important;
+		height: 28px !important;
+		font-size:14px;
+		margin-bottom: 5px !important
+	}
+}
+
+.storm-apps-payment-checkout .apps-payment-checkout .dropdown-menu {
+	top: 0px ! important;
+}
+
+.storm-apps-payment-checkout .lead {
+    margin-bottom: 2px !important;
+}
+
+.storm-apps-payment-checkout .order-items .btn-override {
+	padding: 0px !important;
+}
+
+.storm-apps-payment-checkout .form-group {
+	margin-bottom: 5px !important;
+}
+
+.storm-apps-payment-checkout .box .box-header > .fa, 
+.storm-apps-payment-checkout .box .box-header > .glyphicon, 
+.storm-apps-payment-checkout .box .box-header > .ion, 
+.storm-apps-payment-checkout .box .box-header .box-title {
+	padding: 2px 2px 2px 2px !important;
+}
+
+.storm-apps-payment-checkout .form-control {
+	height: 28px !important;
+	padding: 3px 6px !important;
+}
+
+.storm-apps-payment-checkout .storm-edit-quan .form-control {
+	width: 50px !important;
+}
+
+.storm-apps-payment-checkout .box .box-header > .box-tools {
+    padding: 2px 10px 5px 5px !important;
+}
+
+.storm-apps-payment-checkout .btn {
+	padding: 3px 10px !important;
+}
+
+.storm-apps-payment-checkout .input-group-btn:last-child>.btn, 
+.storm-apps-payment-checkout .input-group-btn:last-child>.btn-group {
+    margin-left: 2px !important;
+}
+
+.storm-apps-payment-checkout .box {
+    position: relative;
+    background: #ffffff;
+    border-top: 2px solid #c1c1c1;
+    margin-bottom: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.storm-apps-payment-checkout .box .box-body {
+    padding: 0px 10px 0px 10px;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.storm-apps-payment-checkout .credit-grad {
+  background: -webkit-linear-gradient(120deg, #84B4DC, #3C8DBC); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(120deg, #84B4DC, #3C8DBC); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(120deg, #84B4DC, #3C8DBC); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(120deg, #84B4DC, #3C8DBC); /* Standard syntax */
+}
+
+.storm-apps-payment-checkout .storm-cc-text {
+	font-size: 14px;
+}
+
+.storm-apps-payment-checkout .storm-card tr:nth-child(odd) td, tr:nth-child(odd) th {
+    background-color: transparent !important;
+    line-height: 1 !important;
+}
+
+.storm-apps-payment-checkout .storm-card tr:nth-child(even) td, tr:nth-child(even) th {
+    background-color: transparent !important;
+    line-height: 1 !important;
+}
+
+.storm-apps-payment-checkout .storm-edit-quan {
+	max-width:150px !important;
+}
+
+.storm-apps-payment-checkout .storm-edit-quan .btn:hover {
+	background-color:#357ebd !important;
+}
+
+.storm-apps-payment-checkout .confirm-button .btn:hover {
+	background-color:#357ebd !important;
+}
+
+.storm-apps-payment-checkout .storm-card .dropdown-menu {
+	top: 0px ! important;
+	min-width: 300px !important;
+}
+
+.storm-apps-payment-checkout .storm-card th, td {
+    padding: 0px !important;
+}
+
+.storm-apps-payment-checkout .storm-card .card-accepted-offset {
+	margin-left:-15px !important;
+}
+
+.storm-apps-payment-checkout .storm-card .credit-box-padding {
+	padding: 10px 10px 0px 10px;
+}
+
+.storm-apps-payment-checkout .storm-card .credit-table {
+	margin-left:-15px; 
+	border: none !important;
+}
+
+.storm-apps-payment-checkout .storm-card .no-border {
+	border:none !important;
+}
+
+.storm-apps-payment-checkout .storm-card .top-td {
+	border: none !important; 
+	padding: 0px !important;
+}
+
+.storm-apps-payment-checkout .storm-card .corner-image-td {
+	width:100px; 
+	border:none !important; 
+	padding: 0px !important;
+}
+
+.storm-apps-payment-checkout .storm-card .left-ten {
+	margin-left:10px;
+}
+
+.storm-apps-payment-checkout .storm-card .label-shadow {
+	text-shadow: 1px 1px 2px white;
+}
+
+.storm-apps-payment-checkout .storm-card button {
+	margin: 0px;
+}
+
+.storm-apps-payment-checkout .no-padding button {
+    margin: 0px;
+}
+
+.storm-apps-payment-checkout .center-text {
+	text-align: center;
+}
+
+.storm-apps-payment-checkout .right-text {
+	text-align: right;
+}
+
+.storm-apps-payment-checkout .top-margin-two {
+	margin-top: 2px !important;
+}
+
+.storm-apps-payment-checkout .form-checkbox {
+	margin-top: 2px !important;
+	padding-top: 2px !important;
+}
+
+.storm-apps-page-cart-checkout {
+	width: 160px;
+}
+
+.storm-apps-page-cart-checkout .widget-text {
+	text-align: center;
+}
+
+.storm-apps-page-cart-checkout .widget-link {
+	border-bottom:0px;
+}
+
+.storm-apps-payment-checkout .row {
+ 	text-align:left !important;
+}
+.storm-apps-payment-checkout .row {
+ 	float: none !important;
+}
+
+.storm-apps-payment-checkout .row	{
+	border-bottom:0px;
+}
+
+.storm-apps-payment-checkout textarea {
+	width: 100%;
+}
+
+.storm-checkout-item-list table {
+	table-layout: auto !important;
+}

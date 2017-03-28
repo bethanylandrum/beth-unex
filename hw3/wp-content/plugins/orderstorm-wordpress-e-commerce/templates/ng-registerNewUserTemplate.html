@@ -1,0 +1,131 @@
+<div class="register-new-user">
+    <div class="form-box col-lg-12">
+        <div class="row" ng-show="formLoaded">
+            <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3">
+                <h1 style="text-align: center;">New Account</h1>
+            </div>
+        </div>
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!formLoaded">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3">
+                <div class="box">
+                    <div class="box-body" ng-show="formLoaded">
+                        <div layout="column" ng-cloak>
+                            <md-content layout-padding>
+                                <form name="registerForm">
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>plan</label>
+                                        <md-select ng-model="planKey" ng-change="checkClearCreditCardData()">
+                                            <md-option 
+                                                ng-repeat="plan in orderStormProducts"
+                                                value="{{plan.product_key}}"
+                                            >
+                                                {{plan.name}} - {{plan.your_cost}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <md-input-container class="md-block" style="cursor:text;">
+                                        <label>first name</label>
+                                        <input required name="firstName" ng-model="firstName">
+                                        <!--<div ng-if="!firstName" ng-messages="registerForm.firstName.$error">
+                                            <div ng-message="required">This is required.</div>
+                                        </div>-->
+                                    </md-input-container>
+                                    <md-input-container class="md-block" style="cursor:text;">
+                                        <label>last name</label>
+                                        <input required name="lastName" ng-model="lastName">
+                                        <!--<div ng-if="!lastName" ng-messages="registerForm.lastName.$error">
+                                            <div ng-message="required">This is required.</div>
+                                        </div>-->
+                                    </md-input-container>
+                                    <md-input-container class="md-block" style="cursor:text;">
+                                        <label>domain name</label>
+                                        <input required name="domainName" ng-model="domainName" ng-pattern="/^[A-Za-z0-9]+\.[A-Za-z0-9.]{2,6}$/" />
+                                        <div ng-messages="registerForm.domainName.$error" ng-if="registerForm.domainName.$dirty">
+                                            <div ng-message="pattern">Your domain name should be somthing.tld</div>
+                                            <div ng-message="required">This is required.</div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container class="md-block" style="cursor:text;">
+                                        <label>choose password</label>
+                                        <input required name="choosePassword" type="password" ng-model="choosePassword" ng-focus="clearPasswordMatch()"
+                                        ng-blur="matchPasswords()">
+                                        <!--<div ng-if="!choosePassword" ng-messages="registerForm.choosePassword.$error">
+                                            <div ng-message="required">This is required.</div>
+                                        </div>-->
+                                    </md-input-container>
+                                    <md-input-container class="md-block" style="cursor:text;">
+                                        <label>confirm password</label>
+                                        <input required name="confirmPassword" type="password" ng-model="confirmPassword" ng-focus="clearPasswordMatch()" ng-blur="matchPasswords()">
+                                        <!--<div ng-if="!confirmPassword" ng-messages="registerForm.confirmPassword.$error">
+                                            <div ng-message="required">This is required.</div>
+                                        </div>-->
+                                    </md-input-container>
+                                    <md-container class="md-block" style="cursor:text;">
+                                        <div><label for="passMessage">password strength</label></div>
+                                        <div 
+                                            ng-password-strength="choosePassword" 
+                                            strength="passStrength" 
+                                            mode="mode"
+                                            class="col-lg-6"
+                                            inner-class="progress-bar"
+                                            inner-class-prefix="progress-bar-"
+                                            >
+                                        </div>{{passwordMessage()}}
+                                        <div ng-show="passwordNoMatch" class="text-danger">The passwords do not match.</div>
+                                    </md-input-container>
+                                    <md-input-container class="md-block" style="cursor:text;">
+                                        <label>client email</label>
+                                        <input required type="email" name="emailAddress" ng-model="emailAddress"
+                                            maxlength="255" ng-pattern="/^.+@.+\..+$/" />
+                                        <div ng-messages="registerForm.emailAddress.$error" role="alert">
+                                            <div ng-message-exp="['required', 'maxlength', 'pattern']">
+                                                Your email must be no longer than 255 characters and look like an e-mail address.
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </form>
+                            </md-content>
+                        </div>
+                        <div class="credit-card" ng-show="planKey !== '{6D7992FC-99D8-46B4-A209-3E32A742A5C9}'">
+                            <os-app-credit-card
+                                alerts-board="osAlertMyAccountPlanPage"
+                                credit-card-scope="creditCardScope",
+                            ></os-app-credit-card>
+                        </div>
+                        <div class="col-lg-12">
+                            <button
+                                type="submit"
+                                class="btn btn-primary update"
+                                ng-click="registerOSAccount()"
+                                ng-disabled="submittingRegistration || !verifyRegistration()"
+                                popover-placement="top"
+                                popover-html-unsafe="{{ submitRegistrationHelpText() }}"
+                                popover-append-to-body="true"
+                                popover-trigger="mouseenter"
+                            >
+                                <span
+                                    ng-if="submittingRegistration"
+                                >
+                                    <i class="fa fa-spinner fa-spin">
+                                    </i>&nbsp;&nbsp;submitting
+                                </span>
+                                <span
+                                    ng-if="!submittingRegistration"
+                                >
+                                    submit
+                                </span>
+                            </button>
+                        </div>
+                        <alerts
+                            board="osAlertRegisterNewUser"
+                            class="os-alert-register-new-user"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

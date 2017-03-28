@@ -1,0 +1,25 @@
+{
+                "customer" : { 
+                    "name" : "Fred Flintstone",
+                    "address" : "123 Quarry Lane"    
+                },
+                "lineItems" : [
+                    { "description": "Gladiator", 
+                      "qty" : 1,
+                      "price" : 1.23,
+                      "url" : "gladiator.jpg"
+                    },
+                    { "description": "How to Train Your Dragon", 
+                      "qty" : 2,
+                      "price" : 1.45,
+                      "url" : "dragon.jpg"
+
+                    },
+                     { "description": "Lion", 
+                      "qty" : 1,
+                      "price" : 2.00,
+                      "url" : "lion.jpg"
+                    }
+
+                ]
+            }

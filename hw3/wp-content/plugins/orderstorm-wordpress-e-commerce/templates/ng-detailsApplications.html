@@ -1,0 +1,22 @@
+<div class="storm-apps-details-applications">
+	<div ng-show="formLoaded">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+                    <tr>
+                        <th>Fitment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in applicationsByProduct">
+                        <td>
+                        	{{product.year}}&nbsp;{{product.manufact}}&nbsp;{{product.name}}
+	                        <br ng-show="product.notes !== null && product.notes !== ''"/>
+	                        <span ng-show="product.notes !== null && product.notes !== ''">Notes on this application: {{product.notes}}</span>
+	                    </td>
+                    </tr>
+                </tbody>
+        	</table>
+        </div>
+	</div>
+</div>
