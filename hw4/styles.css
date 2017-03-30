@@ -44,8 +44,15 @@ p {
 	height: auto;
 }
 
+.newbackgroundcolor {
+	background-color: pink;
+	border: green;
+	height: auto;
+	width: auto;
+}
+
 .sectionheaders {
-	margin-left: 5px;
+	/*margin-left: 5px;*/
 	text-align: left;
 	color: black;
 }
@@ -69,17 +76,28 @@ p {
 .iteminfo {
 color:black;
 float; left;
+font-size: 1.5em;
 /*border: 1px solid black;*/
 }
 
 .line-item-image {
-	/*border: 1px solid green;*/
-	height: 300px;
-	width: 300px;
-	float: right;
+	height: 1in;
+	width: 1in;
+	float: left;
 }
 .itemQuantity {
-	/*border: 1px solid blue;*/
+color:black;
+float; left;
+font-size: 1.5em;
+	
+	/*margin-top: -50pt;
+	color: black;
+	text-overflow: right;
+	border: 1px solid blue;*/
+}
+
+.lineItems {
+	float:right;
 }
 
 @media screen and (min-width: 720px) 

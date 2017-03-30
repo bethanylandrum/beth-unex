@@ -28,13 +28,11 @@
                 }
                 getHTML () {
                     var html = '<div>';
-                    html =  '<div class="iteminfo" id="iteminfo"> ' + this.description+ '</div>';
-                    /*<div class="myimagediv">
-  <img class="myimage" src="webexhw.jpg"> </div>*/
+                    html +=  '<div class="iteminfo" id="iteminfo"> ' + this.description+ '</div>';
                     html +=  '<div class ="myimagediv"><img class="myimage" src="' + this.url+ '"></div>';
-
-                    html+= ' Quantity <input class = "itemQuantity" id="quantity' + this.movieId + '" type = "number" placeholder="1" min="0" onchange="updateQuantity(' + this.id + ')">';
-                    html+= ' Price <div class="iteminfo" id="iteminfo"> $'+ this.price + '</div>';
+                    html+= ' <div class="iteminfo" id="iteminfo"> Price $'+ this.price + '</div>';
+                    html+= '<div class= "iteminfo" id "iteminfo"> Quantity <input class = "itemQuantity" id="quantity' + this.movieId + '" type = "number" placeholder="1" min="0" onchange="updateQuantity(' + this.id + ')">';
+                    
 
                     return html;
                 }
@@ -136,10 +134,14 @@
     </head>
     <body>
      <div class = "backgroundcolor">
-         <h1> Shopping Cart </h1>
+         <div class = "newbackgroundcolor"> <h1> Shopping Express </h1> </div>
        
-          <div> <h2 class ="sectionheaders"> Order Items </h2>
-        <div class="lineItems" id="lineItems"></div> </div>
+          <div> <h2 class ="sectionheaders"> Movies</h2>
+
+        <div class="lineItems" id="lineItems"> Please make your selections below </div>
+
+
+         </div>
       <div> <h2 class ="sectionheaders"> Customer </h2> 
        <div class="customer" id="customer"></div>
          </div>
@@ -159,7 +161,7 @@
          <input name= "movies" id="movies" type="hidden">
          <input name= "total" id="total" type="hidden">
          
-         <button id ="Submit" type="submit"> Buy </button>
+         <button id ="Submit" type="submit"> Buy </button></div>
          
    
 </form>
