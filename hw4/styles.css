@@ -1,0 +1,122 @@
+* {
+	font-family: 'Ek Mukta', sans-serif;
+}
+
+html {
+	height: 100%;
+	width: 100%
+}
+
+body {
+	height: 100%
+}
+
+h1 {
+	 color: black;
+	 text-align: center;
+
+}
+
+h2 {
+	color: black
+}
+
+h3 {
+	text-align: left;
+	color: black;
+	font-style: italic;
+}
+
+h4 {
+	text-align: left;
+	color: black;
+	font-style: italic;
+}
+
+p {
+	font-size:1em;
+	color: black;
+}
+
+
+.backgroundcolor {
+	background-color: white;
+	height: auto;
+}
+
+.newbackgroundcolor {
+	background-color: pink;
+	border: green;
+	height: auto;
+	width: auto;
+}
+
+.sectionheaders {
+	/*margin-left: 5px;*/
+	text-align: left;
+	color: black;
+}
+
+.companyheaders {
+	margin-left: 25px;
+	text-align: left;
+	color:black;
+}
+
+/*.myimage {
+	height: 300px;
+	width: 300px;
+	float: right;
+}*/
+
+.mylistelement::before {
+	content: url(gladiator.jpg);
+}
+
+.iteminfo {
+color:black;
+float; left;
+font-size: 1.5em;
+/*border: 1px solid black;*/
+}
+
+.line-item-image {
+	height: 1in;
+	width: 1in;
+	float: left;
+}
+.itemQuantity {
+color:black;
+float; left;
+font-size: 1.5em;
+	
+	/*margin-top: -50pt;
+	color: black;
+	text-overflow: right;
+	border: 1px solid blue;*/
+}
+
+.lineItems {
+	float:right;
+}
+
+@media screen and (min-width: 720px) 
+{
+	.myimage {
+		margin-top: -50pt;
+	}
+}
+
+@media screen and (max-width: 1000px)
+{
+	.myimage {
+		height:auto;
+		width: 50%;
+		float: none;
+	}
+	.myimagediv {
+		width: 100%;
+		text-align: right;
+		float: left;
+	}
+}

@@ -8,7 +8,9 @@ html {
 }
 
 body {
-	height: 100%
+	height: 100%;
+	margin-left: 1in;
+	margin-right: 1in;
 }
 
 h1 {
@@ -17,7 +19,7 @@ h1 {
 }
 
 h2 {
-	color: black
+	color: black;
 }
 
 h3 {
@@ -35,6 +37,11 @@ h4 {
 p {
 	font-size:1em;
 	color: black;
+
+}
+
+.title {
+	text-align: center;
 }
 
 
@@ -66,12 +73,7 @@ p {
 }
 
 
-@media screen and (min-width: 720px) 
-{
-	.myimage {
-		margin-top: -50pt;
-	}
-}
+
 
 @media screen and (max-width: 719px)
 {
@@ -79,6 +81,7 @@ p {
 		height:auto;
 		width: 50%;
 		float: none;
+		margin-top: 5pt;
 	}
 	.myimagediv {
 		width: 100%;

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    $('#price1').on('show.bs.modal', function (e) {
+    var price = $(e.relatedTarget).data('price');
+    var contact = $('#name').val();
+    var number = $('#no').val();
+    //Pass Values in modal
+        
+    $('#buynow, #TitlePrice').html(price);
+    $('#Name').html(contact);
+    $('#Contact').html(number);
+  });
+
+    $(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#div1").remove();
+    });
+     $("#btn2").click(function(){
+        $("#div2").remove();
+           });
+       $("#btn3").click(function(){
+        $("#div3").remove();
+           });
+
+ $(function() {
+            $("#addAll").click(function() {
+                var add = 0;
+                $(".amt").each(function() {
+                    add += Number($(this).val()*2);
+
+
+                });
+                var taxrate =1.1;
+
+                var shipping = 5;
+
+               
+                $("#para").text("Total : $" + add * taxrate);
+            });
+});
+  </script>
+  <style>
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Movie Outlet</h1>      
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">shopmovies.com</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Comedy</a></li>
+        <li><a href="#">Drama</a></li>
+        <li><a href="#">Romance</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</div>
+</div></div>
+
+<div class="container">    
+  <div class="row">
+   <div id="div1">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+     
+        <div class="panel-heading">Gladiator</div>
+        <div class="panel-body"><img src="gladiator.jpg" class="img-thumbnail" alt="Gladiator" width="200" height="200"></div>
+        <div class="panel-footer">$2.00</div>
+        
+        <div class="dropdown">
+  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown"> Quantity
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+  </ul>
+</div>
+
+<button id ="btn1" type="button" class="btn btn-danger btn-block">Delete</button>
+</div>
+      </div>
+    </div>
+    <div id="div2">
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">How to Train your Dragon</div>
+        <div class="panel-body"><img src="dragon.jpg" class="img-thumbnail" alt="Gladiator" width="200" height="200"></div> 
+        <div class="panel-footer">$2.00</div>
+        <div class="dropdown">
+  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown"> Quantity
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+  </ul>
+      </div>
+      <button id ="btn2" type="button" class="btn btn-danger btn-block">Delete</button>
+
+      </div>
+</div>
+    </div>
+    <div id="div3">
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+      
+        <div class="panel-heading">Lion</div>
+        <div class="panel-body"> <img src="lion.jpg" class="img-thumbnail" alt="Gladiator" width="200" height="200"> </div>
+        <div class="panel-footer">$2.00</div>
+        <div class="dropdown">
+  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown"> Quantity
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>
+  </ul>
+      </div>
+     
+      <button id ="btn3" type="button" class="btn btn-danger btn-block">Delete</button>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+  <div> 
+      
+
+
+<footer class="container-fluid text-center">
+<div> <div class="media">
+  <div class="media-left media-middle">
+  
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Welcome, Bethany!</h4>
+    <form name="getdata" method="post" action="">
+  <h5>Please enter credit card info</h5>
+  <div class="col-xs-12">
+  <!-- display for customer name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input class="form-control" id="name" type="text" value="">                     
+    </div>
+    <!-- display for contact number -->
+    <div class="form-group">
+      <label for="no">Billing</label>
+      <input class="form-control" id="no" name="no" type="text">
+    </div>
+      <div class="form-group">
+      <label for="no">Credit Card No.</label>
+      <input class="form-control" id="no" name="no" type="text">
+    </div>
+   
+  </div>
+  </form>
+
+  <button type="button" class="btn btn-default" data-target="#price1"  data-toggle="modal" data-price="2.00">Pay <br> </button>
+  
+
+
+<div id="price1" class="modal fade">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"> Checkout<span id="TitlePrice"></span></h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        <div class="row">
+        Are you sure?<br>
+        <label>Pay: <span id="buynow"></span></label>
+  </div>
+
+</footer>
+
+</body>
+</html>
