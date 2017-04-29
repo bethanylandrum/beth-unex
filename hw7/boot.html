@@ -1,54 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <head>
+      
+     <title>Shopping Cart</title>
+        <link rel="icon" href="http://holub.com/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Ek+Mukta" rel="stylesheet">
+        <script type="text/javascript" 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="description" content="WebDev Homework">
+        <meta name="author" content="Bethany Landrum">
+    <!-- set page width to screen width on device, no zoom -->
+       <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script>
-    $('#price1').on('show.bs.modal', function (e) {
-    var price = $(e.relatedTarget).data('price');
-    var contact = $('#name').val();
-    var number = $('#no').val();
-    //Pass Values in modal
-        
-    $('#buynow, #TitlePrice').html(price);
-    $('#Name').html(contact);
-    $('#Contact').html(number);
-  });
+         <script>
+         
+            'use strict';//have to do before every jscript file or before script element - force to use var
+            class Movie {
+                constructor (description, qty, price, url, id ) {
+                    this.description = description; 
+                    this.qty= qty; 
+                    this.price= price;
+                    this.url= url; 
+                    this.id= id; 
+                }
+                getHTML () {
+                    var html = '<div class="container"><div class="row"><div class="panel panel-primary">';
+                        html +=  ' <div class="panel-heading"> ' + this.description+ '</div>';
+                        html +=  '<div class ="panel-body"><img class="img-thumbnail" width="200" height="200" src="' + this.url+ '"></div>';
+                        html+= ' <div class="panel-footer"> Price $'+ this.price + '</div>';
+                        html+= '<div class= "panel-footer">  <input class = "itemQuantity" id="quantity' + this.id + '" type = "number" placeholder="Input Quantity" min="0" onchange="updateQuantity(' + this.id + ')">';
+                    
+                    return html;
+                }
+                updateQuantity (quantity) {
+                    this.qty = quantity;
+                }
+                getQuantity () {
+                    return this.qty;
+                }
+                getData() {
+                    var data = {
+                        description: this.description,
+                        price: this.price,
+                        quantity: this.qty,
+                        url: this.url
+                    };
+                    return JSON.stringify (data);
+                }
+                getCost() {
+                    return this.qty * this.price;
+                }
+            }
+            function updateQuantity(myMovieId) {
+                var inputElement = $( "#quantity" + myMovieId );
+                inputElement.value
+                var movie = movies[myMovieId];
+                movie.updateQuantity(document.getElementById("quantity" + myMovieId).value);
+                //movie.quantity = document.getElementById("quantity" + myMovieId).value;
+                console.log("Updated quantity for movie " + myMovieId + " to be " + movie.getQuantity());
+                var movieString= "[";
+                var total = 0;
+                var first = true;
+                 for (let i in movies) {
+                    if (!first) {
+                        movieString += ", ";
+                    } else {
+                        first = false;
+                    }
+                    movieString += movies[i].getData();
+                    total += movie.getCost();
+                 }
+                 movieString += "]";
 
-    $(document).ready(function(){
-    $("#btn1").click(function(){
-        $("#div1").remove();
-    });
-     $("#btn2").click(function(){
-        $("#div2").remove();
-           });
-       $("#btn3").click(function(){
-        $("#div3").remove();
-           });
-
- $(function() {
-            $("#addAll").click(function() {
-                var add = 0;
-                $(".amt").each(function() {
-                    add += Number($(this).val()*2);
-
-
-                });
-                var taxrate =1.1;
-
-                var shipping = 5;
-
-               
-                $("#para").text("Total : $" + add * taxrate);
-            });
-});
-  </script>
-  <style>
+                document.getElementById("movies").value = movieString; 
+                document.getElementById("total").value = total; 
+            }
+            function get(url) {
+                return new Promise( function(resolve, reject) {
+                var req = new XMLHttpRequest();    
+                req.open('GET', url);
+                
+                req.onload = function() {           
+                  if (req.status == 200) {
+                    resolve(req.response);          
+                  }
+                  else {
+                    reject( Error(req.statusText) );    
+                  }
+                };
+                req.onerror = function() {          
+                  reject( Error("Network Error") );
+                };
+                // Make the request
+                req.send();
+              });
+            }
+            var doOnLoad = function() { 
+                get('movielist.json').then(
+                    function(response) {
+                        console.log(response);
+                         myOrder=JSON.parse(response);
+                          document.getElementById("customer").innerHTML = '<div class="customerinfo" id="customerinfo"> '
+                + myOrder.customer.name + '</div>';
+              
+              for (let i=0; i<myOrder.lineItems.length; i++) {
+                    //createitem(i);
+                    var lineItem = myOrder.lineItems[i];
+                    var movie = new Movie (lineItem.description, lineItem.qty, lineItem.price, lineItem.url, i);
+                    var htmlForMovie = movie.getHTML();
+                    movies[i] = movie; 
+                    document.getElementById("lineItems").innerHTML += movie.getHTML();
+               }
+                    },
+                    function(error) {
+                        alert('abort');
+                    });
+             }
+            
+             var myOrder={};
+             var movies ={};
+             window.onload = doOnLoad ;
+         </script>
+         <style>
     .navbar {
       margin-bottom: 50px;
       border-radius: 0;
@@ -62,15 +140,14 @@
       padding: 25px;
     }
   </style>
-</head>
-<body>
 
+    </head>
+    <body>
 <div class="jumbotron">
   <div class="container text-center">
     <h1>Movie Outlet</h1>      
   </div>
 </div>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -96,149 +173,70 @@
     </div>
   </div>
 </nav>
-
 </div>
 </div></div>
+       
+          <div> <h2 class ="sectionheaders"> </h2>
 
-<div class="container">    
-  <div class="row">
-   <div id="div1">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-     
-        <div class="panel-heading">Gladiator</div>
-        <div class="panel-body"><img src="gladiator.jpg" class="img-thumbnail" alt="Gladiator" width="200" height="200"></div>
-        <div class="panel-footer">$2.00</div>
-        
-        <div class="dropdown">
-  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown"> Quantity
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><a href="#">7</a></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#">9</a></li>
-    <li><a href="#">10</a></li>
-  </ul>
-</div>
+        <div class="container" id="lineItems"> </div>
 
-<button id ="btn1" type="button" class="btn btn-danger btn-block">Delete</button>
-</div>
-      </div>
-    </div>
-    <div id="div2">
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">How to Train your Dragon</div>
-        <div class="panel-body"><img src="dragon.jpg" class="img-thumbnail" alt="Gladiator" width="200" height="200"></div> 
-        <div class="panel-footer">$2.00</div>
-        <div class="dropdown">
-  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown"> Quantity
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><a href="#">7</a></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#">9</a></li>
-    <li><a href="#">10</a></li>
-  </ul>
-      </div>
-      <button id ="btn2" type="button" class="btn btn-danger btn-block">Delete</button>
 
-      </div>
-</div>
-    </div>
-    <div id="div3">
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
+         </div>
+         <div class="container">
+          <div class="panel panel-default">
+          <div class="panel-heading">Customer</div><div class="panel-body"><div> <h2 class ="sectionheaders"> </h2> 
+       <div class="customer" id="customer"></div></div>
       
-        <div class="panel-heading">Lion</div>
-        <div class="panel-body"> <img src="lion.jpg" class="img-thumbnail" alt="Gladiator" width="200" height="200"> </div>
-        <div class="panel-footer">$2.00</div>
-        <div class="dropdown">
-  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown"> Quantity
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><a href="#">7</a></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#">9</a></li>
-    <li><a href="#">10</a></li>
-  </ul>
-      </div>
-     
-      <button id ="btn3" type="button" class="btn btn-danger btn-block">Delete</button>
-      </div>
-    </div>
-  </div>
-</div><br>
-
-  <div> 
-      
+         <div class="media-body">
+   </div>
+         </div>
 
 
-<footer class="container-fluid text-center">
-<div> <div class="media">
-  <div class="media-left media-middle">
-  
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Welcome, Bethany!</h4>
-    <form name="getdata" method="post" action="">
-  <h5>Please enter credit card info</h5>
+    
+</div>
+<div class="container">
+<form id="myForm"
+              action="http://holub.com/echo.php"
+              method="post">
+<div class="panel panel-default">
+    <div class="panel-heading">Credit Card Info</div>
+      <div> <h2 class ="sectionheaders" class="panel"> </h2>
+      <form name="getdata" method="post" action="">
+ 
   <div class="col-xs-12">
   <!-- display for customer name -->
     <div class="form-group">
-      <label for="name">Name</label>
-      <input class="form-control" id="name" type="text" value="">                     
+      <label for="name">Name On Card</label>
+      <input class="form-control" class="companyheaders" id="name" type="text" value="">                     
     </div>
     <!-- display for contact number -->
     <div class="form-group">
-      <label for="no">Billing</label>
-      <input class="form-control" id="no" name="no" type="text">
+      <label for="no">Billing Address</label>
+      <input class="form-control" class="companyheaders" id="no" name="no" type="text">
     </div>
       <div class="form-group">
       <label for="no">Credit Card No.</label>
-      <input class="form-control" id="no" name="no" type="text">
+      <input class="form-control" class="companyheaders" id="no" name="no" type="text">
     </div>
-   
+    <div class="form-group">
+      <label for="no">Expiration date</label>
+      <input class="form-control" class="companyheaders" id="no" name="no" type="text">
+      <input name= "movies" id="movies" type="hidden">
+         <input name= "total" id="total" type="hidden">
+    </div>
   </div>
   </form>
+         
+      
+        
+         
+         
+           <button id ="Submit" type="submit" class="btn btn-danger btn-block">Checkout</button>
+</div>
+         
+   
+</form>
+            
+    </body>
 
-  <button type="button" class="btn btn-default" data-target="#price1"  data-toggle="modal" data-price="2.00">Pay <br> </button>
-  
-
-
-<div id="price1" class="modal fade">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"> Checkout<span id="TitlePrice"></span></h4>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-        <div class="row">
-        Are you sure?<br>
-        <label>Pay: <span id="buynow"></span></label>
-  </div>
-
-</footer>
-
-</body>
 </html>
